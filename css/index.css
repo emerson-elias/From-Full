@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis globais */
+
+:root{
+    --white: #fff;
+    --white-smoker:  rgba(255, 255, 255, 0.884);
+    --smoker: rgba(0, 0, 0, 0.5);
+    --bg-img: #2135A6;
+    --orange: #F3541c;
+    --font: 'Poppins', sans-serif;
+    --smooth: 0.3s all ease; 
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--font);
+    background-image: url('../img/fundo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.box-index{
+    position: relative;
+    background-color: var(--white-smoker);
+    padding: 2.5vmax;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px var(--smoker);
+    width: 25vw;
+    max-height: auto;
+    display: flex;
+    justify-content: space-around;  
+    flex-direction: column;
+    align-items: center;   
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.box-index h1{
+    margin-bottom: 5vh;
+    font-size: 1.5vmax;
+    text-align: center;
+    color: var(--bg-img);  
+}
+
+.box-index h2{
+    font-size: 1.2vmax;
+}
+
+.button-login{
+    width: 100%;
+    padding: 15px;
+    margin-top: 1vw;
+    background-color: var(--bg-img);
+    color: var(--white);
+    font-size: 1.1vmax;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-login:hover{
+    background-color: var(--orange);
+}
+
+/* ===Responsividade */
+
+@media (max-width: 998px){
+    .box-index{
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .box-index h1{
+        font-size: 20px; 
+    }
+    
+    .box-index h2, .button-login{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 655px){
+    .box-index{
+        width: 78%;
+        height: auto;
+    }
+}

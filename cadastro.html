@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="img/Ilustration.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="box-form">
+
+        <div class="icon-voltar" onclick="window.location.href='login.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"><path fill="currentColor" d="M220 128a4 4 0 0 1-4 4H49.66l65.17 65.17a4 4 0 0 1-5.66 5.66l-72-72a4 4 0 0 1 0-5.66l72-72a4 4 0 0 1 5.66 5.66L49.66 124H216a4 4 0 0 1 4 4"/></svg>
+            <h2>Voltar</h2>
+        </div>
+
+        <div class="text-title">
+            <h1>Formulário de Inscrição</h1>
+            <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+        </div>
+
+        <form>
+            <h2>Informações do Participante</h2>
+
+            <div class="form-grupo">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required onkeyup="this.value=formatarTexto(this.value)">
+            </div>
+    
+            <div class="form-grupo">
+                <label for="data_nascimento">Data de nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required min="1900-01-01" max="2099-12-31">
+                <span class="mensagem-erro" id="errorData"></span>
+            </div>
+    
+            <div class="form-grupo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" required maxlength="14" onkeyup="this.value=formatarCPF(this.value)">
+                <span class="mensagem-erro" id="errorCPF"></span>
+            </div>
+    
+            <div class="form-grupo">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+              
+            <div class="form-grupo">
+                <label for="email">E-mail:</label> 
+                <input type="email" id="email" name="email" value="" placeholder="name@gmail.com / name@hotmail.com" required>
+                <span class="mensagem-erro" id="errorEmail"></span>
+            </div>
+    
+            <div class="form-grupo">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="tel" name="telefone" value="" placeholder="(xx) x xxxx-xxxx" required maxlength="15">
+                <span class="mensagem-erro" id="errorTel"></span>
+            </div>
+    
+            <div class="form-grupo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                <i id="toggleSenha" class="fa-regular fa-eye"></i>
+            </div>
+              
+            <div class="form-grupo">
+                <label for="confirmarSenha">Confirme sua senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required>
+                <i id="toggleConfirmarSenha" class="fa-regular fa-eye"></i>
+            </div>
+
+            <span class="mensagem-erro" id="errorSenha"></span>              
+
+            <div class="form-grupo">
+                <label for="documento">Documento de identidade:</label>
+                <div class="upload-box">
+                    <img src="img/cloud-upload.svg" alt="Upload">
+                    <p>Clique aqui para selecionar o arquivo</p>
+                </div>
+            </div>
+
+            <div class="form-grupo">
+                <h2>Endereço Residencial</h2>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" required maxlength="9">
+                <span class="mensagem-erro" id="errorCEP"></span>
+            </div>
+
+            <div class="form-grupo inline">
+                <div class="box-1">        
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" name="rua" value="" placeholder="RUA 01">
+
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required onkeyup="this.value=formatarTexto(this.value)">
+                </div>
+
+                <div class="box-2">
+                    <label for="numero">Número:</label>
+                    <input type="number" id="num" name="numero" placeholder="01">
+
+                    <label for="text">Estado:</label>
+                    <select name="estado" id="estado">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>               
+                </div>
+            </div>
+    
+            <div class="form-grupo">
+                <label for="comprovante">Comprovante de residência:</label>
+                <div class="upload-box">
+                    <img src="img/cloud-upload.svg" alt="Upload">
+                    <p>Clique aqui para selecionar o arquivo</p>
+                </div>
+            </div>
+    
+            <div class="form-grupo">
+                <h2>Trilhas de aprendizagem</h2>
+            
+                <div class="form-trilhas">            
+                    <label class="box">
+                        <img src="img/front-icon.svg" alt="Front-end">
+                        <h3>Programação Front-end</h3>
+                        <input type="radio" id="front" name="curso" value="front">
+                    </label>
+
+                    <label class="box"> 
+                        <img src="img/back-icon.svg" alt="Back-end">
+                        <h3>Programação Back-end</h3>
+                        
+                        <input type="radio" id="back" name="curso" value="back">
+                    </label>
+
+                    <label class="box"> 
+                        <img src="img/icon-dados.svg" alt="dados">
+                        <h3>Ciência de Dados</h3>  
+                        <input type="radio" id="full" name="curso" value="dados">
+                    </label>
+
+                    <label class="box"> 
+                        <img src="img/icon-game.svg" alt="jogos">
+                        <h3>Programação de Jogos</h3>
+                        <input type="radio" id="jogos" name="curso" value="jogos">
+                    </label>
+
+                    <label class="box">
+                        <img src="img/ux-icon.svg" alt="UX  Design">
+                        <h3>Design e Experiência</h3>
+                        <input type="radio" id="ux" name="curso" value="Ux">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-condicoes">
+                <input type="checkbox" name="termos" id="checkbox">
+                <label>
+                    Declaro que li e concordo com os <span>Termos e Condições</span> e com a <span>Politica de Privacidade.</span>
+                </label>
+            </div>
+
+            <div class="buttons">
+                <button type="reset" onclick="window.location.href='login.html'">Cancelar</button>
+                <button type="submit" id="inscrever">Fazer Inscrição</button>
+            </div>
+            
+            </div>
+        </form>
+
+    </section>
+
+    <section class="box-img">
+        <img src="img/Ilustration.svg" alt="Ilustração de uma pessoa programando">
+        <img src="img/logo-trilhas-inova.svg" alt="Logo do Trilhas">
+    </section>
+
+    <script src="https://kit.fontawesome.com/091f30ca3a.js" crossorigin="anonymous"></script>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

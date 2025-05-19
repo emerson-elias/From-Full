@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="shortcut icon" href="img/Ilustration.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="box">
+        <div class="box-img">
+            <img src="../Formulário/img/Ilustration.svg" alt="Trilhas NOVAS">
+        </div>
+        <div class="box-descricao">
+            <h1>Seja Bem-Vindo(a)!</h1>
+            <p>Programa de Formação de Jovens e Adultos na Área de Tecnologia.</p>
+            <a id="cadastro" href="cadastro.html">Cadastra-se</a>
+        </div>
+    </section>
+
+    <section class="box-login">
+    
+            <div class="text-title">
+                <h1>Faça seu Login</h1>
+            </div>
+
+            <div class="form-icon">
+                <span>
+                    <i class="fa-brands fa-facebook-f"></i>
+                </span>
+
+                <span>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </span>
+
+                <span>
+                    <i class="fa-brands fa-github-alt"></i>
+                </span>
+            </div>
+            
+            <form class="form-login" id="form-login">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required maxlength="14" onkeyup="this.value=formatarCPF(this.value)">
+                
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua Senha" required pattern=".{8,}" title="Mínimo de 8 caracteres">
+                
+                <div class="button-login">
+                    <button type="submit">Entrar</button>
+                </div>   
+            </form>
+
+    </section>
+
+    <script src="https://kit.fontawesome.com/091f30ca3a.js" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>
